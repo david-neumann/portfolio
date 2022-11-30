@@ -2,8 +2,8 @@ import { Moon, Sun } from 'react-feather';
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-between items-center'>
-      <h2 className='font-mono font-bold text-2xl'>{'<DN/>'}</h2>
+    <nav className='flex justify-between items-center mb-10 px-6 pt-8'>
+      <h2 className='font-mono font-bold text-3xl'>D</h2>
       <Moon
         size={40}
         strokeWidth={2}

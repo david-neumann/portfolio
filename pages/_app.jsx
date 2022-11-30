@@ -71,7 +71,9 @@ const victor = localFont({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className={`${wotfard.variable} ${victor.variable} font-sans`}>
+    <div
+      className={`${wotfard.variable} ${victor.variable} font-sans min-h-screen text-neutral-800 bg-neutral-50`}
+    >
       <Layout>
         <Component {...pageProps} />
       </Layout>

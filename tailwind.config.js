@@ -11,6 +11,9 @@ module.exports = {
         sans: ['var(--font-wotfard)'],
         mono: ['var(--font-victor)'],
       },
+      screens: {
+        xs: '480px',
+      },
     },
   },
   plugins: [],

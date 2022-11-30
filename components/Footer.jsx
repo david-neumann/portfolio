@@ -2,7 +2,7 @@ import { GitHub, Linkedin, Mail } from 'react-feather';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='mt-auto px-6 pb-8'>
       <section className='flex justify-evenly items-center mb-4'>
         <a
           href='https://github.com/david-neumann'
