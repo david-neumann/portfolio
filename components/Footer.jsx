@@ -13,7 +13,7 @@ const Footer = () => {
             size={40}
             strokeWidth={2}
             color='#262626'
-            className='p-2 cursor-pointer'
+            className='p-2 cursor-pointer hover:stroke-purple-600'
           />
         </a>
         <a
@@ -25,7 +25,7 @@ const Footer = () => {
             size={40}
             strokeWidth={2}
             color='#262626'
-            className='p-2 cursor-pointer'
+            className='p-2 cursor-pointer hover:stroke-purple-600'
           />
         </a>
         <a
@@ -37,7 +37,7 @@ const Footer = () => {
             size={40}
             strokeWidth={2}
             color='#262626'
-            className='p-2 cursor-pointer'
+            className='p-2 cursor-pointer hover:stroke-purple-600'
           />
         </a>
       </section>

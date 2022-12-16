@@ -1,12 +1,44 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import profileImg from '../public/images/me.jpeg';
+import { motion } from 'framer-motion';
+import SectionWrapper from '../components/SectionWrapper';
 import SectionHeading from '../components/SectionHeading';
 import ProjectCard from '../components/ProjectCard';
 import lp from '../public/images/lp.png';
 import rtv from '../public/images/rtv.png';
 
 const Home = () => {
+  const projects = [
+    {
+      projectName: 'Listening Party',
+      projectDesc:
+        'A web app for rating and reviewing songs utilizing the Spotify API. Rate songs by searching or viewing your recently played tracks and share a short tweet-length review with your followers.',
+      projectImg: lp,
+      github: 'https://github.com/david-neumann/listening-party',
+      link: 'https://listening-party.onrender.com/',
+    },
+    {
+      projectName: 'Streamer',
+      projectDesc:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt id aliquet risus feugiat in. Neque ornare aenean euismod elementum nisi quis eleifend.',
+      projectImg: lp,
+      github: 'https://github.com/david-neumann/streamer',
+      link: '',
+    },
+    {
+      projectName: 'Rock the Vote',
+      projectDesc:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt id aliquet risus feugiat in. Neque ornare aenean euismod elementum nisi quis eleifend.',
+      projectImg: rtv,
+      github:
+        'https://github.com/david-neumann/assignments/tree/master/_level6/rock-the-vote',
+      link: '',
+    },
+  ];
+
+  const renderedProjects = projects.map((project, index) => (
+    <ProjectCard {...project} key={index} />
+  ));
+
   return (
     <>
       <Head>
@@ -14,78 +46,42 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <section className='flex flex-col justify-center items-center mb-24'>
-        <h3 className='font-mono italic text-xl'>Hi, my name is</h3>
-        <h1 className='font-mono font-bold text-4xl mb-6 text-sky-600'>
-          David Neumann
+      <section className='flex flex-col justify-center items-center mb-24 px-8'>
+        <h1 className=' font-bold text-4xl mb-6'>
+          👋
+          <span className='text-transparent bg-clip-text bg-gradient-to-tr from-sky-600 to-purple-600'>
+            , I'm David
+          </span>
         </h1>
-        <div className='relative w-full aspect-[4/3]'>
-          <Image
-            src={profileImg}
-            alt='David Neumann'
-            fill={true}
-            className='object-cover'
-          />
-        </div>
+        <h2 className='font-bold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-tr from-neutral-600 to-neutral-900'>
+          I enjoy building cool things for the internet
+        </h2>
       </section>
 
-      <section className='px-8 mb-24'>
+      <SectionWrapper>
         <SectionHeading>About Me</SectionHeading>
         <p className='font-extralight text-lg leading-8'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed turpis
-          tincidunt id aliquet risus feugiat in. Neque ornare aenean euismod
-          elementum nisi quis eleifend. Iaculis urna id volutpat lacus laoreet
-          non curabitur. Purus ut faucibus pulvinar elementum integer enim.
-          Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Eu
-          consequat ac felis donec et odio pellentesque diam. Posuere lorem
-          ipsum dolor sit amet consectetur. Egestas erat imperdiet sed euismod
-          nisi porta lorem mollis aliquam. In iaculis nunc sed augue lacus
-          viverra vitae congue eu. Ipsum faucibus vitae aliquet nec ullamcorper
-          sit amet. Dignissim cras tincidunt lobortis feugiat vivamus at.
+          I'm a sports analyst turned{' '}
+          <strong className='font-semibold'>web developer</strong> with an array
+          of diverse past experience: 👨‍👩‍👧 full-time parent, 🎙️ podcast host, ✍️
+          freelance writer, 🎒 student, 🇺🇸 veteran, 🖥️ technical support agent.
+          The skills I've honed in these past professional experiences have led
+          me to be who I am now: a well-rounded developer with excellent written
+          and verbal communication skills, an analytical mind, and a passion for
+          learning new things.
         </p>
-      </section>
+      </SectionWrapper>
 
-      <section className='px-8 mb-24'>
+      <SectionWrapper>
         <SectionHeading>Projects</SectionHeading>
-        <ProjectCard
-          projectName='Listening Party'
-          projectDesc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt
-        id aliquet risus feugiat in. Neque ornare aenean euismod elementum nisi
-        quis eleifend.'
-          projectImg={lp}
-          github='https://github.com/david-neumann/listening-party'
-          link=''
-        />
-        <ProjectCard
-          projectName='Streamer'
-          projectDesc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt
-        id aliquet risus feugiat in. Neque ornare aenean euismod elementum nisi
-        quis eleifend.'
-          projectImg={lp}
-          github='https://github.com/david-neumann/streamer'
-          link=''
-        />
-        <ProjectCard
-          projectName='Rock the Vote'
-          projectDesc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt
-        id aliquet risus feugiat in. Neque ornare aenean euismod elementum nisi
-        quis eleifend.'
-          projectImg={rtv}
-          github='https://github.com/david-neumann/assignments/tree/master/_level6/rock-the-vote'
-          link=''
-        />
-      </section>
+        {renderedProjects}
+      </SectionWrapper>
 
-      <section className='px-8 flex flex-col'>
+      <SectionWrapper classes='flex flex-col'>
         <SectionHeading>Contact</SectionHeading>
         <p className='font-extralight text-lg leading-8 mb-12'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed turpis
-          tincidunt id aliquet risus feugiat in.
+          My inbox is always open! I'm currently looking for new opportunities
+          and would love to hear from you.
         </p>
         <a
           href='mailto:neumann.d.david@gmail.com'
@@ -93,11 +89,14 @@ const Home = () => {
           rel='noopener noreferrer'
           className='place-self-center'
         >
-          <button className='w-48 py-4 text-lg font-light text-sky-600 border-2 border-sky-600 rounded-lg  hover:bg-sky-50'>
-            Get in Touch 👋🏻
-          </button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className='w-48 py-4 text-lg font-light text-purple-600 border-2 border-purple-600 rounded-lg  hover:bg-purple-50'
+          >
+            Get in Touch 👋
+          </motion.button>
         </a>
-      </section>
+      </SectionWrapper>
     </>
   );
 };
