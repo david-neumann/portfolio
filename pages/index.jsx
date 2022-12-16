@@ -46,21 +46,21 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <section className='flex flex-col justify-center items-center mb-24 px-8'>
-        <h1 className=' font-bold text-4xl mb-6'>
+      <section className='flex flex-col justify-center items-center max-w-[480px] mb-36 px-8 transition-all md:max-w-[540px] smd:max-w-[700px] smd:mb-48'>
+        <h1 className='font-bold text-4xl mb-6 md:text-5xl lg:text-6xl'>
           👋
           <span className='text-transparent bg-clip-text bg-gradient-to-tr from-sky-600 to-purple-600'>
-            , I'm David
+            , I'm David.
           </span>
         </h1>
-        <h2 className='font-bold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-tr from-neutral-600 to-neutral-900'>
-          I enjoy building cool things for the internet
+        <h2 className='font-bold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-tr from-neutral-600 to-neutral-900 md:text-4xl lg:text-5xl'>
+          I enjoy building cool things for the internet.
         </h2>
       </section>
 
       <SectionWrapper>
         <SectionHeading>About Me</SectionHeading>
-        <p className='font-extralight text-lg leading-8'>
+        <p className='font-extralight text-lg leading-8 md:text-xl md:leading-9'>
           I'm a sports analyst turned{' '}
           <strong className='font-semibold'>web developer</strong> with an array
           of diverse past experience: 👨‍👩‍👧 full-time parent, 🎙️ podcast host, ✍️
@@ -79,7 +79,7 @@ const Home = () => {
 
       <SectionWrapper classes='flex flex-col'>
         <SectionHeading>Contact</SectionHeading>
-        <p className='font-extralight text-lg leading-8 mb-12'>
+        <p className='font-extralight text-lg leading-8 mb-12 md:text-xl md:leading-9'>
           My inbox is always open! I'm currently looking for new opportunities
           and would love to hear from you.
         </p>

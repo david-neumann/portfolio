@@ -2,8 +2,8 @@ import { GitHub, Linkedin, Mail } from 'react-feather';
 
 const Footer = () => {
   return (
-    <footer className='mt-auto px-6 pb-8'>
-      <section className='flex justify-evenly items-center mb-4'>
+    <footer className='mt-auto px-8 pb-8 transition-all xs:px-16'>
+      <section className='flex justify-evenly items-center mb-4 sm:w-[520px] sm:mx-auto'>
         <a
           href='https://github.com/david-neumann'
           target='_blank'
